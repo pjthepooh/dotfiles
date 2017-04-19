@@ -8,38 +8,83 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+"Bundle 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Settings
+    set encoding=utf-8
+    let python_highlight_all=1
+    syntax on
+    let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore files in NERDTree
+    let g:Powerline_symbols = 'fancy'
 
 " Unmap the arrow keys
 no <down> <Nop>
 no <left> <Nop>
 no <right> <Nop>
 no <up> <Nop>
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
+"ino <down> <Nop>
+"ino <left> <Nop>
+"ino <right> <Nop>
+"ino <up> <Nop>
 
+" Key mappings. {
+    map <Enter> o<ESC>
+    map <S-Enter> O<ESC>
+    nnoremap <C-J> <C-W><C-J>
+    nnoremap <C-K> <C-W><C-K>
+    nnoremap <C-L> <C-W><C-L>
+    nnoremap <C-H> <C-W><C-H>
+    nnoremap <space> za
+    
+    map <C-n> :NERDTreeToggle<CR>
+" }
 
-" Editor settings. {{{
-    syntax enable
-    filetype plugin indent on
-    set tabstop=4
-    set softtabstop=4
-    set expandtab
-    set background=light
-    
-    
-    
-    set virtualedit=onemore
+" Editor settings. {
+	syntax enable
+	filetype plugin indent on
+	
+	set tabstop=4
+	set softtabstop=4
+    set shiftwidth=4
+    set textwidth=139
+	set expandtab
+    set autoindent
+    set fileformat=unix
 
-" }}}
+	set background=light
+	set virtualedit=onemore
+
+    set splitbelow
+    set splitright
+    set mouse=a
+    set clipboard=unnamed
+" }
 
 " Vim UI {
 "    color solarized
+    if has('gui_running')
+        colorscheme zenburn
+    else
+        set background=dark
+        colorscheme solarized
+        call togglebg#map("<F5>")
+    endif
+
     set showmode " display the current mode
     set cursorline " Highlight current line
 
@@ -54,7 +99,7 @@ ino <up> <Nop>
     set incsearch " Find as you type search
     set hlsearch " Highlight search teams
     set winminheight=0 " Windows can be 0 line high
-    set ignorecase " "Case insensitive when uc present
+"    set ignorecase " "Case insensitive when uc present
     set smartcase " not caps-sensitive unless there is a captital letter
     set wildmenu " Show list instead of just completing
     set wildmode=list:longest,full " Command <Tab> completion, list matches, then longest common part, then all
@@ -65,7 +110,7 @@ ino <up> <Nop>
     set foldlevelstart=10 " open most folds by default
     set foldnestmax=10 " 10 nested fold max
     set foldmethod=indent
-    nnoremap <space> za " space un/folds
-"    set list
     
 " }
+
+
