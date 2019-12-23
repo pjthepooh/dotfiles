@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-"Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -19,7 +19,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,28 +54,30 @@ no <up> <Nop>
 " }
 
 " Editor settings. {
-	syntax enable
-	filetype plugin indent on
-	
-	set tabstop=4
-	set softtabstop=4
+    syntax enable
+    filetype plugin indent on
+    
+    set tabstop=4
+    set softtabstop=4
     set shiftwidth=4
     set textwidth=139
-	set expandtab
+    set expandtab
     set autoindent
     set fileformat=unix
 
-	set background=light
-	set virtualedit=onemore
+    set background=dark
+    set virtualedit=onemore
 
     set splitbelow
     set splitright
     set mouse=a
     set clipboard=unnamed
+
+    set paste
 " }
 
 " Vim UI {
-"    color solarized
+    color solarized
     if has('gui_running')
         colorscheme zenburn
     else
@@ -99,7 +100,7 @@ no <up> <Nop>
     set incsearch " Find as you type search
     set hlsearch " Highlight search teams
     set winminheight=0 " Windows can be 0 line high
-"    set ignorecase " "Case insensitive when uc present
+    set ignorecase " "Case insensitive when uc present
     set smartcase " not caps-sensitive unless there is a captital letter
     set wildmenu " Show list instead of just completing
     set wildmode=list:longest,full " Command <Tab> completion, list matches, then longest common part, then all
@@ -110,7 +111,11 @@ no <up> <Nop>
     set foldlevelstart=10 " open most folds by default
     set foldnestmax=10 " 10 nested fold max
     set foldmethod=indent
+
+    " Powerline
+    set laststatus=2 " Always display the statusline in all windows
+    set showtabline=2 " Always display the tabline, even if there is only one tab
+    set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
     
 " }
-
 

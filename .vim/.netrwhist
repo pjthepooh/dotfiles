@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/pjhuang/dev/pjthepooh/src'
-let g:netrw_dirhist_2='/Users/pjhuang/dev'
-let g:netrw_dirhist_3='/Users/pjhuang/dev/algorithm'
-let g:netrw_dirhist_4='/Users/pjhuang/.vim/bundle'
-let g:netrw_dirhist_5='/Users/pjhuang/dev/screen_bacteria/constants.py'
