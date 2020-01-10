@@ -70,7 +70,7 @@ no <up> <Nop>
 
     set splitbelow
     set splitright
-    set mouse=a
+    set mouse=v
     set clipboard=unnamed
 
     set paste
