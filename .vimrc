@@ -10,6 +10,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-scripts/indentjava.vim'
+Plugin 'derekwyatt/vim-scala'
 " Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
@@ -73,7 +75,6 @@ no <up> <Nop>
     set mouse=v
     set clipboard=unnamed
 
-    set paste
 " }
 
 " Vim UI {
@@ -116,6 +117,5 @@ no <up> <Nop>
     set laststatus=2 " Always display the statusline in all windows
     set showtabline=2 " Always display the tabline, even if there is only one tab
     set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-    
 " }
 
